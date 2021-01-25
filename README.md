@@ -2,9 +2,19 @@
 
 ## resources
 
+### development board workflow
+
+[GitHub](https://github.com/oneleif/bfjWebsite-React/projects/1)
+
 ### UI/UX wireframe
 
-https://www.figma.com/file/Ncw8H1fuuFa2vSCrczDPEX/BFTJ?node-id=0%3A1
+[Figma](https://www.figma.com/file/Ncw8H1fuuFa2vSCrczDPEX/BFTJ?node-id=0%3A1)
+
+### current website
+
+[Bread for the Journey](https://breadforthejourneyomaha.org/)
+
+---
 
 ![](https://github.com/oneleif/olDocs/blob/master/assets/images/oneleif_logos/full_logo/oneleif_transparent.png?raw=true)
 
