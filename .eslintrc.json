@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "settings": {
         "react": {
@@ -18,7 +19,6 @@
             "jsx": true
         }
     },
-    "ignorePatterns": "*.test.js",
     "rules": {
         "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
     }
