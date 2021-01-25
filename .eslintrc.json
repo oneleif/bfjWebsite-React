@@ -18,6 +18,7 @@
             "jsx": true
         }
     },
+    "ignorePatterns": "*.test.js",
     "rules": {
         "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
     }
