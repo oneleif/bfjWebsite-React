@@ -1,5 +1,11 @@
 # Bread for the Journey
 
+## deployments
+
+### development
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/25f2b066-f9b3-47d0-bc21-529c2f416140/deploy-status)](https://app.netlify.com/sites/oneleif-bfj/deploys)
+
 ## resources
 
 ### development board workflow
