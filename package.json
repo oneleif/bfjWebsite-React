@@ -13,11 +13,11 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
+        "build": "yarn run lint:fix && react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint ./src --ext .js",
-        "lint:fix": "npm run lint -- --fix"
+        "lint:fix": "yarn run lint --fix"
     },
     "eslintConfig": {
         "extends": [
@@ -49,7 +49,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "pre-push": "yarn test --watchAll=false"
         }
     },
     "lint-staged": {
