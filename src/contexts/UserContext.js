@@ -1,38 +1,34 @@
-import React, { useContext, useEffect, useState } from "react";
-import { setCookie, getCookie } from "../utils/cookiesManager";
+import React, { useContext, useEffect, useState } from 'react';
+import { setCookie, getCookie } from '../utils/cookiesManager';
 
 const UserContext = React.createContext([undefined, undefined]);
 
 function UserProvider({ children }) {
-  const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const sessionUser = JSON.parse(getCookie());
-    if (sessionUser && !user) {
-      setUser(sessionUser);
-      console.log(sessionUser);
-    }
-  }, [user]);
+    useEffect(() => {
+        const sessionUser = JSON.parse(getCookie());
+        if (sessionUser && !user) {
+            setUser(sessionUser);
+            console.log(sessionUser);
+        }
+    }, [user]);
 
-  useEffect(() => {
-    setCookie(JSON.stringify(user));
-  }, [user]);
+    useEffect(() => {
+        setCookie(JSON.stringify(user));
+    }, [user]);
 
-  return (
-    <UserContext.Provider value={[user, setUser]}>
-      {children}
-    </UserContext.Provider>
-  );
+    return <UserContext.Provider value={[user, setUser]}>{children}</UserContext.Provider>;
 }
 
 function useUser() {
-  const context = useContext(UserContext);
+    const context = useContext(UserContext);
 
-  if (!context) {
-    throw new Error("User must be accessed from within the UserProvider");
-  }
+    if (!context) {
+        throw new Error('User must be accessed from within the UserProvider');
+    }
 
-  return context;
+    return context;
 }
 
 export { UserProvider, useUser };
