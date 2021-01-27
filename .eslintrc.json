@@ -1,25 +1,30 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "node": true,
-        "jest": true
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
-    },
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
-
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-    "rules": {
-        "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "react/prop-types": ["off"]
+  }
 }
