@@ -7,7 +7,7 @@ function UserProvider({ children }) {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const sessionUser = JSON.parse(getCookie());
+        const sessionUser = getCookie();
         if (sessionUser && !user) {
             setUser(sessionUser);
             console.log(sessionUser);
@@ -15,7 +15,7 @@ function UserProvider({ children }) {
     }, [user]);
 
     useEffect(() => {
-        setCookie(JSON.stringify(user));
+        setCookie(user);
     }, [user]);
 
     return <UserContext.Provider value={[user, setUser]}>{children}</UserContext.Provider>;
