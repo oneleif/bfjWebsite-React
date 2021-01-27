@@ -12,10 +12,17 @@ import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
 
 ReactDOM.render(
+<<<<<<< HEAD
   <Router history={history}>
     <Routes />
   </Router>,
   document.getElementById("root")
+=======
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+>>>>>>> dev
 );
 
 // If you want to start measuring performance in your app, pass a function
