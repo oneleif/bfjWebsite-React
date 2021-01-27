@@ -1,7 +1,17 @@
 import React from 'react';
 
+import HeroSection from '../components/HeroSection/HeroSection';
+import Navbar from '../components/Navbar/Navbar';
+
 function Landing() {
-    return <h1>Landing</h1>;
+    return (
+        <React.Fragment>
+            <header>
+                <Navbar />
+                <HeroSection />
+            </header>
+        </React.Fragment>
+    );
 }
 
 export default Landing;
