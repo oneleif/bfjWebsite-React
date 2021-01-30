@@ -1,0 +1,64 @@
+// Very Small devices - 375px
+@mixin xSmall($identifier: 'up') {
+    @if ($identifier == 'down') {
+        @media (max-width: #{$screen-xs}) {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$screen-xs}) {
+            @content;
+        }
+    }
+}
+
+// Small devices - 600px
+@mixin small($identifier: 'up') {
+    @if ($identifier == 'down') {
+        @media (max-width: #{$screen-sm}) {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$screen-sm}) {
+            @content;
+        }
+    }
+}
+
+// Medium sized devices - 960px
+@mixin medium($identifier: 'up') {
+    @if ($identifier == 'down') {
+        @media (max-width: #{$screen-md}) {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$screen-md}) {
+            @content;
+        }
+    }
+}
+
+// Large devices - 1280px
+@mixin large($identifier: 'up') {
+    @if ($identifier == 'down') {
+        @media (max-width: #{$screen-lg}) {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$screen-lg}) {
+            @content;
+        }
+    }
+}
+
+// Very Large devices - 1440px
+@mixin large($identifier: 'up') {
+    @if ($identifier == 'down') {
+        @media (max-width: #{$screen-xl}) {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$screen-xl}) {
+            @content;
+        }
+    }
+}
