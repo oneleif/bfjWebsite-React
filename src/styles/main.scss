@@ -1,8 +1,14 @@
 @import './globals';
 @import './colors';
+
 @import './responsive/screens';
 @import './responsive/queries';
 
 @import './container';
+
 @import './components/navbar';
 @import './components/hero-section';
+@import './components/text-content';
+@import './components/hero-landing';
+@import './components/statement-content';
+@import './components/board-members';

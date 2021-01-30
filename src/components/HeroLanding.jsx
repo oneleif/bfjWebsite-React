@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../styles/heroLanding.scss';
-
 import { HERO } from '../constants/page_content/landing';
 
 function HeroLanding() {

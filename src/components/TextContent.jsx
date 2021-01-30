@@ -2,12 +2,16 @@ import React from 'react';
 
 function TextContent({ title, text }) {
     return (
-        <>
-            <h2>{title}</h2>
+        <div className="tc-container">
+            <h2 className="tc-title">{title}</h2>
             {text.map((paragraph, idx) => {
-                return <p key={`rt-${idx}`}>{paragraph}</p>;
+                return (
+                    <p key={`rt-${idx}`} className="tc-paragraph">
+                        {paragraph}
+                    </p>
+                );
             })}
-        </>
+        </div>
     );
 }
 

@@ -1,0 +1,28 @@
+.bm-container {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    // justify-content: center;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    @include small('up') {
+        flex-direction: row;
+    }
+
+    .bm-member {
+        margin: 20px;
+        width: 230px;
+
+        .bm-name {
+            font-size: 20px;
+            color: $lightRed;
+            margin: 10px 0;
+        }
+        .bmrole {
+            font-size: 14px;
+        }
+    }
+}
