@@ -6,6 +6,6 @@ import LandingPage from '../../pages/Landing';
 describe('Landing View Test', () => {
     test('Initial render', () => {
         const { queryByText } = render(<LandingPage />);
-        expect(queryByText('Landing')).toBeInTheDocument();
+        expect(queryByText("We're Part of Something Big")).toBeInTheDocument();
     });
 });
