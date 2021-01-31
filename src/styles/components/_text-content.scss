@@ -1,9 +1,7 @@
 .tc-container {
     width: 0 auto;
     font-size: 17px;
-    // border: 1px solid black;
     margin: 0 5%;
-    // color: blue;
 
     @include small('up') {
         margin: 0 20%;
@@ -11,7 +9,7 @@
     }
 
     @include medium('up') {
-        margin: 0 35%;
+        margin: 0 25%;
         font-size: 20px;
     }
 
