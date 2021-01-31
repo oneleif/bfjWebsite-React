@@ -51,7 +51,7 @@
 }
 
 // Very Large devices - 1440px
-@mixin large($identifier: 'up') {
+@mixin xLarge($identifier: 'up') {
     @if ($identifier == 'down') {
         @media (max-width: #{$screen-xl}) {
             @content;
