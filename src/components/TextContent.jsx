@@ -6,7 +6,7 @@ function TextContent({ title, text }) {
             <h2 className="tc-title">{title}</h2>
             {text.map((paragraph, idx) => {
                 return (
-                    <p key={`rt-${idx}`} className="tc-paragraph">
+                    <p key={`tc-${idx}`} className="tc-paragraph">
                         {paragraph}
                     </p>
                 );
