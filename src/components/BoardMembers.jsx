@@ -2,7 +2,7 @@ import React from 'react';
 
 function BoardMembers({ members }) {
     return (
-        <div className="bm-container">
+        <div className="bm-container container">
             {members.map((member, idx) => {
                 return (
                     <div className="bm-member" key={`bm-${idx}`}>

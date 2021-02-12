@@ -1,14 +1,17 @@
 .bm-container {
     display: flex;
-    width: 70%;
-    margin: 0 auto;
     align-items: baseline;
     flex-wrap: wrap;
-
     flex-direction: column;
+    align-items: center;
 
     @include small('up') {
         flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    @include large('up') {
+        justify-content: flex-start;
     }
 
     .bm-member {
