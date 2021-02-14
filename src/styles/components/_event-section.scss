@@ -1,21 +1,16 @@
 .event-container {
     margin: 0 auto;
-    width: 300px;
-
-    @include medium('up') {
-        width: unset;
-    }
 
     .head {
         margin: 1rem 0;
 
         span {
             color: $lightRed;
-            margin-right: 25%;
+            margin-right: 20%;
             font-size: 22px;
             font-weight: 700;
 
-            @include medium('up') {
+            @include small('up') {
                 margin-right: 50px;
             }
         }
@@ -26,34 +21,26 @@
         }
     }
     .content {
-        display: grid;
-        grid-template-columns: 1fr;
-
-        @include medium('up') {
-            grid-template-columns: 1fr 1fr;
-            column-gap: 1rem;
-        }
-
-        @include large('up') {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
+        display: flex;
     }
 
     .event-item {
-        margin-bottom: 2rem;
-        height: 270px;
+        margin: 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 100%;
 
         img {
-            width: max-content;
+            width: 100%;
         }
 
         .title {
             color: $lightRed;
             max-width: 220px;
             font-weight: bold;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         .description {
@@ -64,13 +51,19 @@
         &:nth-of-type(3) {
             display: none;
         }
-        &:nth-of-type(2) {
-            @include medium('up') {
+
+        @include small('up') {
+            width: calc(100% / 2);
+
+            &:nth-of-type(2) {
                 display: flex;
             }
         }
-        &:nth-of-type(3) {
-            @include large('up') {
+
+        @include medium('up') {
+            width: calc(100% / 3);
+
+            &:nth-of-type(3) {
                 display: flex;
             }
         }
