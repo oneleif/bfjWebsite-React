@@ -13,6 +13,7 @@ import TextContent from '../components/TextContent';
 import StatementContent from '../components/StatementContent';
 import BoardMembers from '../components/BoardMembers';
 import Container from '../components/Container';
+import Footer from '../components/Footer';
 
 function Landing() {
     return (
@@ -27,6 +28,7 @@ function Landing() {
             <BoardMembers members={BOARD.MEMBERS} />
             <Container title="News" to="/stories" items={NEWS} className="news" />
             <Container title="Events" to="/events" items={EVENTS} className="event" />
+            <Footer />
         </>
     );
 }
