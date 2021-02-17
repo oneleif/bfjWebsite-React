@@ -1,0 +1,62 @@
+.footer {
+    color: white;
+
+    .info,
+    .copyright {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        p {
+            font-size: 12px;
+        }
+    }
+    .info {
+        background-color: $lightRed;
+
+        div {
+            margin-top: 1rem;
+
+            h5 {
+                margin-bottom: 0.5rem;
+                font-weight: normal;
+            }
+        }
+
+        .logo {
+            display: none;
+        }
+
+        .contacts {
+            svg {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .events {
+            p {
+                line-height: 2.2rem;
+            }
+        }
+        .mission {
+            p {
+                line-height: 1.2rem;
+            }
+        }
+
+        @include large('up') {
+            display: flex;
+
+            .logo {
+                display: block;
+            }
+
+            div {
+                width: calc(100% / 4);
+            }
+        }
+    }
+    .copyright {
+        background-color: $darkRed;
+        font-size: 13px;
+    }
+}

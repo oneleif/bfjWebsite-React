@@ -3,6 +3,7 @@ import React from 'react';
 import { ABOUT, BOARD, STATEMENT } from '../constants/page_content/landing';
 import { EVENTS } from '../constants/events';
 import { NEWS } from '../constants/news-items';
+import { UPCOMING } from '../constants/upcoming-events';
 
 import HeroSection from '../components/HeroSection/HeroSection';
 import Navbar from '../components/Navbar/Navbar';
@@ -13,6 +14,8 @@ import TextContent from '../components/TextContent';
 import StatementContent from '../components/StatementContent';
 import BoardMembers from '../components/BoardMembers';
 import Container from '../components/Container';
+import Footer from '../components/Footer';
+import UpcomingEvents from '../components/UpcomingEvents';
 
 function Landing() {
     return (
@@ -27,6 +30,8 @@ function Landing() {
             <BoardMembers members={BOARD.MEMBERS} />
             <Container title="News" to="/stories" items={NEWS} className="news" />
             <Container title="Events" to="/events" items={EVENTS} className="event" />
+            <UpcomingEvents events={UPCOMING} />
+            <Footer />
         </>
     );
 }
