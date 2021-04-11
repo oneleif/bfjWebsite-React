@@ -1,0 +1,70 @@
+.stories-view {
+    &-hero {
+        background-color: $lightRed;
+        height: 9rem;
+        position: relative;
+
+        h1 {
+            color: $white;
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            font-size: 3rem;
+            letter-spacing: 0.4rem;
+        }
+    }
+
+    &-articles {
+        padding: 2rem;
+
+        .article {
+            &-container {
+                width: 100%;
+                margin-block-end: 3rem;
+
+                @include medium('up') {
+                    display: flex;
+                }
+            }
+            &-image {
+                img {
+                    width: 100%;
+                }
+
+                @include medium('up') {
+                    flex-basis: 20%;
+                }
+            }
+            &-text {
+                .title {
+                    color: $lightRed;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    margin-block-start: 0.8rem;
+                    margin-block-end: 0.8rem;
+
+                    @include medium('up') {
+                        font-size: 2rem;
+                        margin-block-start: unset;
+                    }
+                }
+
+                .description {
+                    font-size: 1.1rem;
+
+                    @include medium('up') {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                @include medium('up') {
+                    flex-basis: 75%;
+                    margin-inline-start: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

@@ -17,7 +17,7 @@ const Container = ({ title, to, items, className }) => {
                         <div key={index} className={`${className}-item`}>
                             <img src={item.picture} alt={`${className}-image`} />
                             <p className="title">{item.title}</p>
-                            <p className="description">{item.decription}</p>
+                            <p className="description">{item.description}</p>
                         </div>
                     );
                 })}

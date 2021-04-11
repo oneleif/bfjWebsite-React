@@ -6,6 +6,7 @@
 
 @import './container';
 
+//Components
 @import './components/navbar';
 @import './components/hero-section';
 @import './components/text-content';
@@ -16,3 +17,6 @@
 @import './components/event-section';
 @import './components/upcoming-events';
 @import './components/footer';
+
+//Pages
+@import './pages/stories-view';

@@ -5,18 +5,23 @@ import event3 from '../assets/events/event-image-3.png';
 export const EVENTS = [
     {
         picture: event1,
+        image: event1,
         title: 'Omaha Gives',
-        decription:
-            'Bread for the Journey Omaha will be participating in Omaha Gives! a 24 hour...',
+        description:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio hic, sequi voluptates cumque consequatur, expedita saepe similique, assumenda accusamus aliquid tempora laboriosam ullam eligendi corporis est eos praesentium fugit vitae itaque voluptate earum at. Ut.',
     },
     {
         picture: event2,
+        image: event2,
         title: 'Wayne Muller To Speak In Omaha at BFJ Event!',
-        decription: 'Wayne Muller, Author, Speaker and Founder of Bread for the Journey and...',
+        description:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio hic, sequi voluptates cumque consequatur, expedita saepe similique, assumenda accusamus aliquid tempora laboriosam ullam eligendi corporis est eos praesentium fugit vitae itaque voluptate earum at. Ut.',
     },
     {
         picture: event3,
+        image: event3,
         title: 'Omaha Bread for the Journey - Cabernet For A Cause',
-        decription: 'Bread for the Journey Omaha is an all-volunteer philanthropic organization...',
+        description:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio hic, sequi voluptates cumque consequatur, expedita saepe similique, assumenda accusamus aliquid tempora laboriosam ullam eligendi corporis est eos praesentium fugit vitae itaque voluptate earum at. Ut.',
     },
 ];
