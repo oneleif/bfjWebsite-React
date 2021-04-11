@@ -6,24 +6,20 @@ import { NEWS } from '../constants/news-items';
 import { UPCOMING } from '../constants/upcoming-events';
 
 import HeroSection from '../components/HeroSection/HeroSection';
-import Navbar from '../components/Navbar/Navbar';
 import HelmetWrapper from '../components/HelmetWrapper';
-
 // import HeroLanding from '../components/HeroLanding';
 import TextContent from '../components/TextContent';
 import StatementContent from '../components/StatementContent';
 import BoardMembers from '../components/BoardMembers';
 import Container from '../components/Container';
-import Footer from '../components/Footer';
 import UpcomingEvents from '../components/UpcomingEvents';
 
 function Landing() {
     return (
-        <>
+        <React.Fragment>
             <HelmetWrapper />
-            <Navbar />
+
             <HeroSection />
-            {/* <HeroLanding /> */}
             <TextContent title={ABOUT.TITLE} text={ABOUT.PARAGRAPHS} />
             <StatementContent text={STATEMENT.PARAGRAPHS} hero={STATEMENT.HERO} />
             <TextContent title={BOARD.TITLE} text={BOARD.PARAGRAPHS} />
@@ -31,8 +27,7 @@ function Landing() {
             <Container title="News" to="/stories" items={NEWS} className="news" />
             <Container title="Events" to="/events" items={EVENTS} className="event" />
             <UpcomingEvents events={UPCOMING} />
-            <Footer />
-        </>
+        </React.Fragment>
     );
 }
 

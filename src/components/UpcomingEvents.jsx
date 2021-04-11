@@ -9,8 +9,8 @@ const UpcomingEvents = ({ events = [] }) => {
                 <Link to="/events">view all</Link>
             </div>
             <div className="events">
-                {events.map((event) => (
-                    <div key={event.title} className="event">
+                {events.map((event, index) => (
+                    <div key={index} className="event">
                         <div className="image">
                             <img src={event.image} alt="upcoming event" />
                         </div>
