@@ -4,18 +4,18 @@ import item3 from '../assets/news/news-image-3.png';
 
 export const NEWS = [
     {
-        picture: item1,
+        image: item1,
         title: 'Bread for the Journey Supports Change of Omaha!',
         description: 'Bread For The Journey is super excited and has provided a grant to Change...',
     },
     {
-        picture: item2,
+        image: item2,
         title: 'Susan Rogert’s Healing Day Program',
         description:
             'Susan Rogert has received a BFJ grant for her healing day program to assist all...',
     },
     {
-        picture: item3,
+        image: item3,
         title: 'Bread for the Journey Supports Change of Omaha!',
         description: 'Bread For The Journey is super excited and has provided a grant to Change...',
     },
