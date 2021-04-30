@@ -1,24 +1,41 @@
-import React, { useState } from 'react';
-import HamburgerMenu from 'react-hamburger-menu';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState, useCallback, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Drawer from 'rc-drawer';
 
+import { ReactComponent as HamburgerIcon } from '../../assets/icons/hamburger_menu.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/close-icon.svg';
 import Logo from '../../assets/BFT-logo.png';
+import NavbarLinks from '../../components/NavLinks/NavLinks';
 
 const Navbar = () => {
     /********************
      * Hooks
      ********************/
     const [isOpen, setIsOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
 
     /********************
      * Functions
      ********************/
-    function handleToggle() {
-        setIsOpen(!isOpen);
-    }
+    const handleResize = useCallback(() => {
+        return setIsMobile(window.innerWidth < 1280);
+    }, [setIsMobile]);
+
     function handleCloseNav() {
         setIsOpen(false);
     }
+    function handleOpenNav() {
+        setIsOpen(true);
+    }
+
+    useEffect(() => {
+        // adds event listener for window resizing
+        window.addEventListener('resize', handleResize);
+        return () => {
+            // removes the event listener whenever component unmounted
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     /********************
      * Render
@@ -29,41 +46,20 @@ const Navbar = () => {
                 <img src={Logo} alt="logo" />
             </Link>
 
-            <HamburgerMenu
-                className="hamburger"
-                isOpen={isOpen}
-                menuClicked={handleToggle}
-                width={25}
-                height={15}
-                strokeWidth={1.5}
-                rotate={0}
-                color="black"
-                borderRadius={10}
-                animationDuration={0.5}
-            />
+            {isMobile ? <HamburgerIcon onClick={handleOpenNav} /> : <NavbarLinks />}
 
-            <ul className={`nav-list${isOpen ? ' open' : ''}`}>
-                <li className="nav-item">
-                    <NavLink to="/about" activeClassName="active" onClick={handleCloseNav}>
-                        About Us
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/stories" activeClassName="active" onClick={handleCloseNav}>
-                        Our Stories
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/events" activeClassName="active" onClick={handleCloseNav}>
-                        Events
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/donate" activeClassName="active" onClick={handleCloseNav}>
-                        Donate
-                    </NavLink>
-                </li>
-            </ul>
+            <Drawer
+                open={isOpen}
+                width="100vw"
+                placement="left"
+                handler={
+                    <span className="drawer__close">
+                        <CloseIcon onClick={handleCloseNav} />
+                    </span>
+                }
+            >
+                <NavbarLinks handleCloseNav={handleCloseNav} />
+            </Drawer>
         </nav>
     );
 };
