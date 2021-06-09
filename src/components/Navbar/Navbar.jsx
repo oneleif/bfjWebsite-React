@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as HamburgerIcon } from '../../assets/icons/hamburger_menu.svg';
 import Drawer from '../Drawer';
-
+import Container from '../Container';
+import NavbarLinks from '../NavLinks';
+//assets
 import Logo from '../../assets/BFT-logo.png';
-import NavbarLinks from '../../components/NavLinks/NavLinks';
+import { ReactComponent as HamburgerIcon } from '../../assets/icons/hamburger_menu.svg';
 
 const Navbar = () => {
     /********************
@@ -42,15 +43,23 @@ const Navbar = () => {
      ********************/
     return (
         <nav className="navbar">
-            <Link to="/">
-                <img src={Logo} alt="logo" />
-            </Link>
+            <Container maxWidth="xl">
+                <div className="navbar__content">
+                    <Link to="/" className="logo">
+                        <img src={Logo} alt="logo" />
+                    </Link>
 
-            {isMobile ? <HamburgerIcon onClick={handleOpenNav} /> : <NavbarLinks />}
+                    {isMobile ? (
+                        <HamburgerIcon onClick={handleOpenNav} />
+                    ) : (
+                        <NavbarLinks mobile={isMobile} />
+                    )}
+                </div>
+            </Container>
 
             {isMobile && (
                 <Drawer open={isOpen} onClose={handleCloseNav}>
-                    <NavbarLinks handleCloseNav={handleCloseNav} />
+                    <NavbarLinks mobile={isMobile} handleCloseNav={handleCloseNav} />
                 </Drawer>
             )}
         </nav>

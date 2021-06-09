@@ -1,12 +1,10 @@
 @import './globals';
 @import './colors';
-
 @import './responsive/screens';
 @import './responsive/queries';
 
-@import './container';
-
 //Components
+@import './components/container';
 @import './components/drawer';
 @import './components/navlinks';
 @import './components/navbar';
