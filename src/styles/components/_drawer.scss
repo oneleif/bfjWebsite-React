@@ -1,0 +1,27 @@
+.drawer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 10;
+    background-color: white;
+    transition: left 200ms ease-in-out;
+
+    &.open {
+        left: 0px;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: flex-end;
+        margin-block-end: 1rem;
+        margin-block-start: 1rem;
+        padding-inline-end: 1rem;
+        padding-inline-start: 1rem;
+    }
+
+    .content {
+        margin-block-start: 3rem;
+    }
+}
