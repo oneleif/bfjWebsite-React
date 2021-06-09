@@ -1,11 +1,7 @@
 export default [
     {
-        path: '/',
-        label: 'Home',
-    },
-    {
         path: '/about',
-        label: 'About',
+        label: 'About Us',
     },
     {
         path: '/stories',
