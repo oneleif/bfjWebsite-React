@@ -1,9 +1,7 @@
 .navbar {
     width: 100%;
-    height: 80px;
 
     &__content {
-        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -24,13 +22,5 @@
         svg {
             cursor: pointer;
         }
-    }
-
-    @include small('up') {
-        height: 100px;
-    }
-
-    @include medium('up') {
-        height: 150px;
     }
 }

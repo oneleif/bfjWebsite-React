@@ -3,25 +3,44 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -100vw;
+    left: 100vw;
     z-index: 10;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     transition: left 200ms ease-in-out;
 
     &.open {
         left: 0px;
     }
 
-    .icon {
-        display: flex;
-        justify-content: flex-end;
-        margin-block-end: 1rem;
-        margin-block-start: 1rem;
-        padding-inline-end: 1rem;
-        padding-inline-start: 1rem;
-    }
+    &__content {
+        padding-block-start: 1rem;
+        padding-block-end: 1rem;
+        width: 80%;
+        background-color: $white;
+        margin-inline-start: auto;
 
-    .content {
-        margin-block-start: 3rem;
+        @include small('up') {
+            width: 60%;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-inline-start: 1rem;
+            margin-inline-end: 1rem;
+
+            .logo {
+                width: 100px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .children {
+            margin-block-start: 3rem;
+        }
     }
 }
