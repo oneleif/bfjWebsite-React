@@ -42,8 +42,8 @@ const Navbar = () => {
      * Render
      ********************/
     return (
-        <nav className="navbar">
-            <Container maxWidth="xl">
+        <Container maxWidth="xl">
+            <nav className="navbar">
                 <div className="navbar__content">
                     <Link to="/" className="logo">
                         <img src={Logo} alt="logo" />
@@ -55,14 +55,14 @@ const Navbar = () => {
                         <NavbarLinks mobile={isMobile} />
                     )}
                 </div>
-            </Container>
 
-            {isMobile && (
-                <Drawer open={isOpen} onClose={handleCloseNav}>
-                    <NavbarLinks mobile={isMobile} handleCloseNav={handleCloseNav} />
-                </Drawer>
-            )}
-        </nav>
+                {isMobile && (
+                    <Drawer open={isOpen} onClose={handleCloseNav}>
+                        <NavbarLinks mobile={isMobile} handleCloseNav={handleCloseNav} />
+                    </Drawer>
+                )}
+            </nav>
+        </Container>
     );
 };
 
