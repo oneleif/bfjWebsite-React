@@ -1,8 +1,101 @@
 .landing-view {
+    // HERO SECTION
+    &-hero {
+        .maxim {
+            background-image: url('../../assets/hero.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-block-start: 8vw;
+
+            p {
+                color: white;
+                font-size: 10vw;
+            }
+        }
+        .footnote {
+            font-size: 1rem;
+
+            @include small('up') {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    // ABOUT SECTION
+    &-about {
+        margin-block-start: 1.5rem;
+    }
+
+    // STATEMENT SECTION
+    &-statement {
+        margin-block-start: 1.5rem;
+        background-color: $lightRed;
+        color: white;
+
+        .container {
+            padding-block-end: 0;
+            padding-block-start: 1rem;
+        }
+
+        .declaration {
+            margin-block-end: 1rem;
+        }
+
+        .maxim {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            word-spacing: 0.5rem;
+
+            @include small('up') {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    // BOARD SECTION
+    &-board {
+        margin-block-start: 1.5rem;
+
+        .board-members {
+            display: grid;
+            column-gap: 1.2rem;
+            row-gap: 3rem;
+
+            @include small('up') {
+                grid-template-columns: repeat(2, minmax(200px, 1fr));
+            }
+            @include large('up') {
+                grid-template-columns: repeat(4, minmax(200px, 1fr));
+            }
+
+            .member {
+                &__image {
+                    img {
+                        width: 100%;
+                    }
+                }
+                &__name {
+                    color: $lightRed;
+                    margin-block-start: 1rem;
+                    margin-block-end: 0.6rem;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+                &__role {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    // NEWS & EVENTS SECTION
+    &-news {
+        margin-block-start: 1.5rem;
+    }
     &-news,
     &-events {
-        margin: 0 auto;
-
         .head {
             margin: 1rem 0;
 
@@ -39,21 +132,13 @@
                 &-text {
                     .title {
                         color: $lightRed;
-                        font-size: 1.6rem;
+                        font-size: 1rem;
                         font-weight: bold;
                         margin-block-start: 0.8rem;
                         margin-block-end: 0.8rem;
 
                         @include medium('up') {
-                            font-size: 2rem;
-                        }
-                    }
-
-                    .description {
-                        font-size: 1.1rem;
-
-                        @include medium('up') {
-                            font-size: 1.3rem;
+                            font-size: 1.2rem;
                         }
                     }
                 }
@@ -64,6 +149,82 @@
                 grid-template-columns: repeat(3, 1fr);
                 column-gap: 1rem;
             }
+        }
+    }
+
+    // UPCOMING EVENTS SECTION
+    &-upcoming-events {
+        text-align: center;
+        margin: 1rem auto 6rem auto;
+
+        .title {
+            margin: 1rem 0;
+
+            h4 {
+                font-weight: 700;
+                color: $lightRed;
+                padding: 0.5rem;
+                font-size: 22px;
+            }
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+        }
+
+        .events {
+            .event {
+                margin: 1.3rem;
+
+                .image {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .event-title {
+                    font-weight: 700;
+                    color: $lightRed;
+                    padding: 0.5rem;
+                    font-size: 20px;
+                }
+                .event-date {
+                    display: block;
+                    padding: 0.5rem;
+                    font-size: 14px;
+                }
+                .event-details {
+                    text-align: left;
+                    font-size: 14px;
+                }
+                .event-more {
+                    color: black;
+                    text-decoration: underline;
+                    font-size: 14px;
+                    display: block;
+                    padding: 0.5rem;
+                }
+            }
+
+            @include medium('up') {
+                display: flex;
+
+                .event {
+                    width: calc(100% / 3);
+                }
+            }
+
+            @include medium('down') {
+                .event {
+                    &:nth-of-type(2),
+                    &:nth-of-type(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        @include small('up') {
+            width: 85%;
         }
     }
 }

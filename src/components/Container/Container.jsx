@@ -2,11 +2,11 @@ import React from 'react';
 
 /**
  *
- * @param {{maxWidth:'sm' | 'md' | 'lg' | 'xl'}} props
+ * @param {{maxWidth:'sm' | 'md' | 'lg' | 'xl',className:string}} props
  * @returns
  */
-const Container = ({ maxWidth, children }) => {
-    return <div className={`container ${maxWidth || ''}`.trim()}>{children}</div>;
+const Container = ({ maxWidth = '', className = '', children }) => {
+    return <div className={`container ${className} ${maxWidth}`.trim()}>{children}</div>;
 };
 
 export default Container;

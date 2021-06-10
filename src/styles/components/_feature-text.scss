@@ -1,0 +1,10 @@
+.feature-text {
+    & > * {
+        margin-block-end: 1.2rem;
+    }
+
+    h2 {
+        color: $lightRed;
+        text-align: center;
+    }
+}
