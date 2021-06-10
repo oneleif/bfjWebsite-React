@@ -149,17 +149,7 @@ function Landing() {
                     </div>
                     <div className="events">
                         {UPCOMING.map((event, index) => (
-                            <div key={index} className="event">
-                                <div className="image">
-                                    <img src={event.image} alt="upcoming event" />
-                                </div>
-                                <p className="event-title">{event.title}</p>
-                                <span className="event-date">{event.date}</span>
-                                <p className="event-details">{event.details}</p>
-                                <Link to={event.to} className="event-more">
-                                    learn more
-                                </Link>
-                            </div>
+                            <ArticleContainer key={index} article={event} />
                         ))}
                     </div>
                 </Container>

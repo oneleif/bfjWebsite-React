@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ArticleContainer = ({ article }) => {
     /********************
@@ -20,7 +21,7 @@ const ArticleContainer = ({ article }) => {
     /********************
      * Custom Functions
      ********************/
-    const cutDescription = (description) => {
+    const trimDescription = (description) => {
         if (isMobile) {
             return description.length > 70 ? `${description.substring(0, 70)}...` : description;
         } else {
@@ -38,7 +39,13 @@ const ArticleContainer = ({ article }) => {
             </div>
             <div className="article-text">
                 <p className="title">{article.title}</p>
-                <p className="description">{cutDescription(article.description)}</p>
+                {article.date && <span className="date">{article.date}</span>}
+                <p className="description">{trimDescription(article.description)}</p>
+                {article.link && (
+                    <Link className="link" to={article.link}>
+                        learn more
+                    </Link>
+                )}
             </div>
         </article>
     );
