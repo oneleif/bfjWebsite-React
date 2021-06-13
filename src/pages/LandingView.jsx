@@ -7,7 +7,7 @@ import FeatureText from '../components/FeatureText';
 import ArticleContainer from '../components/ArticleContainer';
 import { EVENTS } from '../constants/events';
 import { MEMBERS } from '../constants/board_members';
-import { NEWS } from '../constants/news-items';
+import { STORIES } from '../constants/stories';
 import { UPCOMING } from '../constants/upcoming-events';
 
 function Landing() {
@@ -116,7 +116,8 @@ function Landing() {
                         </Link>
                     </div>
                     <div className="content">
-                        {NEWS.map((item, index) => (
+                        {/* get first three items only */}
+                        {STORIES.filter((_, index) => index <= 2).map((item, index) => (
                             <ArticleContainer key={index} article={item} />
                         ))}
                     </div>
@@ -149,7 +150,7 @@ function Landing() {
                     </div>
                     <div className="events">
                         {UPCOMING.map((event, index) => (
-                            <ArticleContainer key={index} article={event} />
+                            <ArticleContainer key={index} article={event} withDate withLink />
                         ))}
                     </div>
                 </Container>
