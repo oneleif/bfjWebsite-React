@@ -117,8 +117,8 @@ function Landing() {
                     </div>
                     <div className="content">
                         {/* get first three items only */}
-                        {STORIES.filter((_, index) => index <= 2).map((item, index) => (
-                            <ArticleContainer key={index} article={item} />
+                        {STORIES.slice(0, 3).map((item) => (
+                            <ArticleContainer key={item.id} article={item} />
                         ))}
                     </div>
                 </Container>

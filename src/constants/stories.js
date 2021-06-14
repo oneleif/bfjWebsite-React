@@ -7,13 +7,19 @@ import item6 from '../assets/stories/stories-image-6.png';
 
 export const STORIES = [
     {
+        id: '1',
+        sponsorsAmount: 0,
+        donationsAmount: 0,
         image: item1,
         title: 'Bread for the Journey Supports Change of Omaha!',
         description:
-            'Bread For The Journey is super excited and has provided a grant to Change of Omaha! Change of Omaha is a new organization and is moving full steam ahead with initiatives to bring positive change and equity to the...',
+            'Bread For The Journey is super excited and has provided a grant to Change of Omaha! Change of Omaha is a new organization and is moving full steam ahead with initiatives to bring positive change and equity to the Omaha community. Change of Omaha has three major goals. Community Revitalization, Fighting Systemic Racism, and the Eradication of Food Insecurity',
         link: '#',
     },
     {
+        id: '2',
+        sponsorsAmount: 0,
+        donationsAmount: 0,
         image: item2,
         title: 'Susan Rogert’s Healing Day Program',
         description:
@@ -21,6 +27,9 @@ export const STORIES = [
         link: '#',
     },
     {
+        id: '3',
+        sponsorsAmount: 0,
+        donationsAmount: 0,
         image: item3,
         title: 'Congratulations to oneleif!',
         description:
@@ -28,6 +37,9 @@ export const STORIES = [
         link: '#',
     },
     {
+        id: '4',
+        sponsorsAmount: 0,
+        donationsAmount: 0,
         image: item4,
         title: 'Making Special Spaces for Ill Children',
         description:
@@ -35,6 +47,9 @@ export const STORIES = [
         link: '#',
     },
     {
+        id: '5',
+        sponsorsAmount: 0,
+        donationsAmount: 0,
         image: item5,
         title: 'Tiny House Turned Mobile Clinic',
         description:
@@ -42,6 +57,9 @@ export const STORIES = [
         link: '#',
     },
     {
+        id: '6',
+        sponsorsAmount: 0,
+        donationsAmount: 0,
         image: item6,
         title: 'Thriving Titans Caring for Homeless Students',
         description:

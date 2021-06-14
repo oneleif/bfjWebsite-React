@@ -19,8 +19,12 @@ const StoriesView = () => {
 
             <Container maxWidth="xl">
                 <div className="stories-view-articles">
-                    {STORIES.map((story, index) => (
-                        <Link className="stories-view-link" key={index} to={story.link}>
+                    {STORIES.map((story) => (
+                        <Link
+                            className="stories-view-link"
+                            key={story.id}
+                            to={`/stories/${story.id}`}
+                        >
                             <ArticleContainer article={story} />
                         </Link>
                     ))}
