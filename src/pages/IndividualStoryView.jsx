@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Container from '../components/Container';
 import ArticleContainer from '../components/ArticleContainer';
 import { STORIES } from '../constants/stories';
+//assets
+import { ReactComponent as HeartIcon } from '../assets/icons/heart.svg';
+import { ReactComponent as CreditCardIcon } from '../assets/icons/credit_card.svg';
 
 const IndividualStoryView = ({ match }) => {
     const story = STORIES.find((story) => story.id === match.params.id);
@@ -32,20 +35,27 @@ const IndividualStoryView = ({ match }) => {
                 </Container>
             </div>
             <Container maxWidth="xl">
+                {/* MAIN CONTENT */}
                 <main className="individual-story-view-content">
                     <div className="charity">
                         <div className="text">
                             <p>
-                                <span className="icon"></span>
+                                <span className="icon">
+                                    <HeartIcon />
+                                </span>{' '}
                                 {story.sponsorsAmount} sponsors
                             </p>
                             <p>
-                                <span className="icon"></span>
+                                <span className="icon">
+                                    <CreditCardIcon />
+                                </span>{' '}
                                 {story.donationsAmount} USD
                             </p>
                         </div>
                         <div className="btn">
-                            <button>Donate </button>
+                            <button>
+                                Donate <HeartIcon />
+                            </button>
                         </div>
                     </div>
                     <div className="image">

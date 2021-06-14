@@ -88,12 +88,28 @@
             justify-content: space-between;
             align-items: center;
 
+            .text {
+                p {
+                    .icon {
+                        svg {
+                            path {
+                                fill: $lightRed;
+                            }
+                        }
+                    }
+                }
+            }
+
             button {
                 background-color: $yellow;
-                padding: 0.5rem;
+                padding: 0.7rem 1rem;
                 border: none;
                 outline: none;
                 color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100px;
 
                 &:hover {
                     cursor: pointer;
