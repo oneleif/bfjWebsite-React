@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const ArticleContainer = ({ article }) => {
+/**
+ *
+ * @param {{article:object,withLink:boolean,withDate:boolean}} props
+ * @returns
+ */
+const ArticleContainer = ({ article, withLink, withDate }) => {
     /********************
      * Hooks
      ********************/
@@ -20,11 +26,11 @@ const ArticleContainer = ({ article }) => {
     /********************
      * Custom Functions
      ********************/
-    const cutDescription = (description) => {
+    const trimDescription = (description) => {
         if (isMobile) {
             return description.length > 70 ? `${description.substring(0, 70)}...` : description;
         } else {
-            return description.length > 200 ? `${description.substring(0, 200)}...` : description;
+            return description.length > 200 ? `${description.substring(0, 250)}...` : description;
         }
     };
 
@@ -38,7 +44,13 @@ const ArticleContainer = ({ article }) => {
             </div>
             <div className="article-text">
                 <p className="title">{article.title}</p>
-                <p className="description">{cutDescription(article.description)}</p>
+                {withDate && <span className="date">{article.date}</span>}
+                <p className="description">{trimDescription(article.description)}</p>
+                {withLink && (
+                    <Link className="link" to={article.link}>
+                        learn more
+                    </Link>
+                )}
             </div>
         </article>
     );

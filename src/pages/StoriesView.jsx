@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import ArticleContainer from '../components/ArticleContainer/ArticleContainer';
 import HelmetWrapper from '../components/HelmetWrapper';
-import { EVENTS } from '../constants/events';
+import Container from '../components/Container';
+import { STORIES } from '../constants/stories';
 
 const StoriesView = () => {
     return (
@@ -10,13 +12,24 @@ const StoriesView = () => {
             <HelmetWrapper title="Stories" />
 
             <div className="stories-view-hero">
-                <h1>Stories</h1>
+                <Container maxWidth="xl">
+                    <h1>Our Stories</h1>
+                </Container>
             </div>
-            <div className="stories-view-articles">
-                {EVENTS.map((event, index) => (
-                    <ArticleContainer key={index} article={event} />
-                ))}
-            </div>
+
+            <Container maxWidth="xl">
+                <div className="stories-view-articles">
+                    {STORIES.map((story) => (
+                        <Link
+                            className="stories-view-link"
+                            key={story.id}
+                            to={`/stories/${story.id}`}
+                        >
+                            <ArticleContainer article={story} />
+                        </Link>
+                    ))}
+                </div>
+            </Container>
         </div>
     );
 };

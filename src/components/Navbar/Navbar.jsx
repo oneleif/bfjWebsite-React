@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Drawer from 'rc-drawer';
 
-import { ReactComponent as HamburgerIcon } from '../../assets/icons/hamburger_menu.svg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/close-icon.svg';
+import Drawer from '../Drawer';
+import Container from '../Container';
+import NavbarLinks from '../NavLinks';
+//assets
 import Logo from '../../assets/BFT-logo.png';
-import NavbarLinks from '../../components/NavLinks/NavLinks';
+import { ReactComponent as HamburgerIcon } from '../../assets/icons/hamburger_menu.svg';
 
 const Navbar = () => {
     /********************
@@ -41,26 +42,27 @@ const Navbar = () => {
      * Render
      ********************/
     return (
-        <nav className="navbar-container container">
-            <Link to="/">
-                <img src={Logo} alt="logo" />
-            </Link>
+        <Container maxWidth="xl">
+            <nav className="navbar">
+                <div className="navbar__content">
+                    <Link to="/" className="logo">
+                        <img src={Logo} alt="logo" />
+                    </Link>
 
-            {isMobile ? <HamburgerIcon onClick={handleOpenNav} /> : <NavbarLinks />}
+                    {isMobile ? (
+                        <HamburgerIcon onClick={handleOpenNav} />
+                    ) : (
+                        <NavbarLinks mobile={isMobile} />
+                    )}
+                </div>
 
-            <Drawer
-                open={isOpen}
-                width="100vw"
-                placement="left"
-                handler={
-                    <span className="drawer__close">
-                        <CloseIcon onClick={handleCloseNav} />
-                    </span>
-                }
-            >
-                <NavbarLinks handleCloseNav={handleCloseNav} />
-            </Drawer>
-        </nav>
+                {isMobile && (
+                    <Drawer open={isOpen} onClose={handleCloseNav}>
+                        <NavbarLinks mobile={isMobile} handleCloseNav={handleCloseNav} />
+                    </Drawer>
+                )}
+            </nav>
+        </Container>
     );
 };
 

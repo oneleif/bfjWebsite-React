@@ -1,0 +1,32 @@
+.article {
+    &-container {
+        width: 100%;
+    }
+
+    &-image {
+        img {
+            width: 100%;
+        }
+    }
+
+    &-text {
+        .title {
+            color: $lightRed;
+            margin-block-start: 0.8rem;
+            margin-block-end: 0.8rem;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .date {
+            display: block;
+            font-size: 0.9rem;
+            margin-block-end: 0.8rem;
+        }
+        .link {
+            display: block;
+            font-size: 0.9rem;
+            color: black;
+            margin-block-start: 0.8rem;
+        }
+    }
+}
