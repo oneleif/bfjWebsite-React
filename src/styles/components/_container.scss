@@ -1,0 +1,21 @@
+.container {
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    padding-block-start: 0.5rem;
+    padding-block-end: 0.5rem;
+    margin: 0 auto;
+    width: 100%;
+
+    &.sm {
+        max-width: 300px;
+    }
+    &.md {
+        max-width: 600px;
+    }
+    &.lg {
+        max-width: 900px;
+    }
+    &.xl {
+        max-width: 1350px;
+    }
+}

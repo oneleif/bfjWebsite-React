@@ -1,0 +1,46 @@
+.drawer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: left 200ms ease-in-out;
+
+    &.open {
+        left: 0px;
+    }
+
+    &__content {
+        padding-block-start: 1rem;
+        padding-block-end: 1rem;
+        width: 80%;
+        background-color: $white;
+        margin-inline-start: auto;
+
+        @include small('up') {
+            width: 60%;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-inline-start: 1rem;
+            margin-inline-end: 1rem;
+
+            .logo {
+                width: 100px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .children {
+            margin-block-start: 3rem;
+        }
+    }
+}

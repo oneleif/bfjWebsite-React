@@ -1,70 +1,68 @@
-import React, { useState } from 'react';
-import HamburgerMenu from 'react-hamburger-menu';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState, useCallback, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
+import Drawer from '../Drawer';
+import Container from '../Container';
+import NavbarLinks from '../NavLinks';
+//assets
 import Logo from '../../assets/BFT-logo.png';
+import { ReactComponent as HamburgerIcon } from '../../assets/icons/hamburger_menu.svg';
 
 const Navbar = () => {
     /********************
      * Hooks
      ********************/
     const [isOpen, setIsOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
 
     /********************
      * Functions
      ********************/
-    function handleToggle() {
-        setIsOpen(!isOpen);
-    }
+    const handleResize = useCallback(() => {
+        return setIsMobile(window.innerWidth < 1280);
+    }, [setIsMobile]);
+
     function handleCloseNav() {
         setIsOpen(false);
     }
+    function handleOpenNav() {
+        setIsOpen(true);
+    }
+
+    useEffect(() => {
+        // adds event listener for window resizing
+        window.addEventListener('resize', handleResize);
+        return () => {
+            // removes the event listener whenever component unmounted
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     /********************
      * Render
      ********************/
     return (
-        <nav className="navbar-container container">
-            <Link to="/">
-                <img src={Logo} alt="logo" />
-            </Link>
+        <Container maxWidth="xl">
+            <nav className="navbar">
+                <div className="navbar__content">
+                    <Link to="/" className="logo">
+                        <img src={Logo} alt="logo" />
+                    </Link>
 
-            <HamburgerMenu
-                className="hamburger"
-                isOpen={isOpen}
-                menuClicked={handleToggle}
-                width={25}
-                height={15}
-                strokeWidth={1.5}
-                rotate={0}
-                color="black"
-                borderRadius={10}
-                animationDuration={0.5}
-            />
+                    {isMobile ? (
+                        <HamburgerIcon onClick={handleOpenNav} />
+                    ) : (
+                        <NavbarLinks mobile={isMobile} />
+                    )}
+                </div>
 
-            <ul className={`nav-list${isOpen ? ' open' : ''}`}>
-                <li className="nav-item">
-                    <NavLink to="/about" activeClassName="active" onClick={handleCloseNav}>
-                        About Us
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/stories" activeClassName="active" onClick={handleCloseNav}>
-                        Our Stories
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/events" activeClassName="active" onClick={handleCloseNav}>
-                        Events
-                    </NavLink>
-                </li>
-                <li className="nav-item">
-                    <NavLink to="/donate" activeClassName="active" onClick={handleCloseNav}>
-                        Donate
-                    </NavLink>
-                </li>
-            </ul>
-        </nav>
+                {isMobile && (
+                    <Drawer open={isOpen} onClose={handleCloseNav}>
+                        <NavbarLinks mobile={isMobile} handleCloseNav={handleCloseNav} />
+                    </Drawer>
+                )}
+            </nav>
+        </Container>
     );
 };
 

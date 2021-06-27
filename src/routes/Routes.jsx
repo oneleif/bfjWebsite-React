@@ -2,13 +2,17 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //  IMPORT ROUTES
-import Landing from '../pages/Landing';
+import LandingView from '../pages/LandingView';
+import StoriesView from '../pages/StoriesView';
+import IndividualStoryView from '../pages/IndividualStoryView';
 
 //  RENDER
 export const Routes = () => {
     return (
         <Switch>
-            <Route path="/" component={Landing} />
+            <Route path="/stories/:id" component={IndividualStoryView} />
+            <Route path="/stories" component={StoriesView} />
+            <Route exact path="/" component={LandingView} />
         </Switch>
     );
 };
